@@ -1,6 +1,6 @@
 ﻿namespace Multi_platform_Translation
 {
-    partial class Form1
+    partial class FrmTranslation
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textOriginal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBing = new System.Windows.Forms.TextBox();
@@ -40,11 +40,11 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTranslation = new System.Windows.Forms.Button();
+            this.chkTopMost = new System.Windows.Forms.CheckBox();
+            this.cobForm = new System.Windows.Forms.ComboBox();
+            this.cobTo = new System.Windows.Forms.ComboBox();
+            this.btnCrossing = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chkBing = new System.Windows.Forms.CheckBox();
             this.chkBaidu = new System.Windows.Forms.CheckBox();
@@ -56,19 +56,19 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textOriginal
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(32, 7);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(255, 178);
-            this.textBox1.TabIndex = 29;
-            this.textBox1.Text = "this is Test";
+            this.textOriginal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textOriginal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textOriginal.HideSelection = false;
+            this.textOriginal.Location = new System.Drawing.Point(32, 7);
+            this.textOriginal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textOriginal.Multiline = true;
+            this.textOriginal.Name = "textOriginal";
+            this.textOriginal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textOriginal.Size = new System.Drawing.Size(255, 178);
+            this.textOriginal.TabIndex = 29;
+            this.textOriginal.Text = "this is Test";
             // 
             // label4
             // 
@@ -197,11 +197,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.checkBox1, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox2, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnTranslation, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.chkTopMost, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cobForm, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cobTo, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnCrossing, 1, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(322, 7);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -237,77 +237,77 @@
             this.label7.Text = "译文语言";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnTranslation
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.button1, 2);
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 131);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 43);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "翻译(&T)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.tableLayoutPanel2.SetColumnSpan(this.btnTranslation, 2);
+            this.btnTranslation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTranslation.Location = new System.Drawing.Point(3, 131);
+            this.btnTranslation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTranslation.Name = "btnTranslation";
+            this.btnTranslation.Size = new System.Drawing.Size(250, 43);
+            this.btnTranslation.TabIndex = 2;
+            this.btnTranslation.Text = "翻译(&T)";
+            this.btnTranslation.UseVisualStyleBackColor = true;
+            this.btnTranslation.Click += new System.EventHandler(this.BtnTranslation_Click);
             // 
-            // checkBox1
+            // chkTopMost
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(3, 74);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(41, 49);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "置顶";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            this.chkTopMost.AutoSize = true;
+            this.chkTopMost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.chkTopMost.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chkTopMost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkTopMost.Location = new System.Drawing.Point(3, 74);
+            this.chkTopMost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chkTopMost.Name = "chkTopMost";
+            this.chkTopMost.Size = new System.Drawing.Size(41, 49);
+            this.chkTopMost.TabIndex = 3;
+            this.chkTopMost.Text = "置顶";
+            this.chkTopMost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkTopMost.UseVisualStyleBackColor = true;
+            this.chkTopMost.CheckedChanged += new System.EventHandler(this.ChkTopMost_CheckedChanged);
             // 
-            // comboBox1
+            // cobForm
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cobForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cobForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cobForm.FormattingEnabled = true;
+            this.cobForm.Items.AddRange(new object[] {
             "自动检测",
             "日语",
             "英语",
             "中文"});
-            this.comboBox1.Location = new System.Drawing.Point(50, 4);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 25);
-            this.comboBox1.TabIndex = 4;
+            this.cobForm.Location = new System.Drawing.Point(50, 4);
+            this.cobForm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cobForm.Name = "cobForm";
+            this.cobForm.Size = new System.Drawing.Size(203, 25);
+            this.cobForm.TabIndex = 4;
             // 
-            // comboBox2
+            // cobTo
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cobTo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cobTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cobTo.FormattingEnabled = true;
+            this.cobTo.Items.AddRange(new object[] {
             "日语",
             "英语",
             "中文"});
-            this.comboBox2.Location = new System.Drawing.Point(50, 39);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 25);
-            this.comboBox2.TabIndex = 5;
+            this.cobTo.Location = new System.Drawing.Point(50, 39);
+            this.cobTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cobTo.Name = "cobTo";
+            this.cobTo.Size = new System.Drawing.Size(203, 25);
+            this.cobTo.TabIndex = 5;
             // 
-            // button2
+            // btnCrossing
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(50, 74);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(203, 49);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "交换语言(&S)";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.btnCrossing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCrossing.Location = new System.Drawing.Point(50, 74);
+            this.btnCrossing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCrossing.Name = "btnCrossing";
+            this.btnCrossing.Size = new System.Drawing.Size(203, 49);
+            this.btnCrossing.TabIndex = 6;
+            this.btnCrossing.Text = "交换语言(&S)";
+            this.btnCrossing.UseVisualStyleBackColor = true;
+            this.btnCrossing.Click += new System.EventHandler(this.BtnCrossing_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -332,7 +332,7 @@
             this.tableLayoutPanel1.Controls.Add(this.textBing, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textOriginal, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.chkGoogle, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -433,7 +433,7 @@
             this.chkGoogle.UseVisualStyleBackColor = true;
             this.chkGoogle.CheckedChanged += new System.EventHandler(this.ChkGoogle_CheckedChanged);
             // 
-            // Form1
+            // FrmTranslation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -441,7 +441,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("YaHei Consolas Hybrid", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "FrmTranslation";
             this.Text = "多平台翻译器";
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -453,7 +453,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textOriginal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBing;
@@ -465,11 +465,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTranslation;
+        private System.Windows.Forms.CheckBox chkTopMost;
+        private System.Windows.Forms.ComboBox cobForm;
+        private System.Windows.Forms.ComboBox cobTo;
+        private System.Windows.Forms.Button btnCrossing;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.CheckBox chkGoogle;
         private System.Windows.Forms.CheckBox chkQQ;

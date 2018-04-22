@@ -5,16 +5,16 @@ using TranslationUtil;
 
 namespace Multi_platform_Translation
 {
-    public partial class Form1 : Form
+    public partial class FrmTranslation : Form
     {
         private readonly Dictionary<string, Dictionary<string, string>> langDic = new Dictionary<string, Dictionary<string, string>>();
 
-        public Form1()
+        public FrmTranslation()
         {
             InitializeComponent();
             LangDic_initialization();
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 2;
+            cobForm.SelectedIndex = 0;
+            cobTo.SelectedIndex = 2;
         }
 
         private void LangDic_initialization()
@@ -39,38 +39,42 @@ namespace Multi_platform_Translation
             langDic["必应"].Add("中文", "zh-CHS");
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void ChkTopMost_CheckedChanged(object sender, EventArgs e)
         {
-            TopMost = checkBox1.Checked;
+            TopMost = chkTopMost.Checked;
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void BtnCrossing_Click(object sender, EventArgs e)
         {
-            var c1 = comboBox1.SelectedIndex;
+            var c1 = cobForm.SelectedIndex;
             if (!(c1 > 0)) return;
-            comboBox1.SelectedIndex = comboBox2.SelectedIndex + 1;
-            comboBox2.SelectedIndex = c1 - 1;
+            cobForm.SelectedIndex = cobTo.SelectedIndex + 1;
+            cobTo.SelectedIndex = c1 - 1;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnTranslation_Click(object sender, EventArgs e)
         {
-            if (chkSogou.Checked) {
-                textSogou.Text = Sogou.Translation(textBox1.Text, langDic["必应"][comboBox1.Text], langDic["必应"][comboBox2.Text]);
+            btnTranslation.Enabled = false;
+            if (!(textOriginal.Text.Length > 0)) return;
+            if (chkSogou.Checked)
+            {
+                textSogou.Text = Sogou.Translation(textOriginal.Text, langDic["必应"][cobForm.Text], langDic["必应"][cobTo.Text]);
             }
             if (chkYoudao.Checked) { }
             if (chkGoogle.Checked) { }
             if (chkBaidu.Checked)
             {
-                textBaidu.Text = Baidu.Translation(textBox1.Text, langDic["百度"][comboBox1.Text], langDic["百度"][comboBox2.Text]);
+                textBaidu.Text = Baidu.Translation(textOriginal.Text, langDic["百度"][cobForm.Text], langDic["百度"][cobTo.Text]);
             }
             if (chkQQ.Checked)
             {
-                textQQ.Text = Tencent.Translation(textBox1.Text, langDic["百度"][comboBox1.Text], langDic["百度"][comboBox2.Text]);
+                textQQ.Text = Tencent.Translation(textOriginal.Text, langDic["百度"][cobForm.Text], langDic["百度"][cobTo.Text]);
             }
-            if (chkBing.Checked)
+            if (chkBing.Checked && cobForm.SelectedIndex != 0)
             {
-                textBing.Text = Bing.Translation(textBox1.Text, langDic["必应"][comboBox1.Text], langDic["必应"][comboBox2.Text]);
+                textBing.Text = Bing.Translation(textOriginal.Text, langDic["必应"][cobForm.Text], langDic["必应"][cobTo.Text]);
             }
+            btnTranslation.Enabled = true;
         }
 
         private void ChkGoogle_CheckedChanged(object sender, EventArgs e)
