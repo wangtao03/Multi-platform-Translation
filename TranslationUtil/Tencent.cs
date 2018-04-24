@@ -81,7 +81,7 @@ namespace TranslationUtil
             webRequest.Timeout = 20000;
             webRequest.Accept = "*/*";
             webRequest.Headers.Add("Accept-Encoding: gzip,deflate");
-            webRequest.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36";
+            webRequest.UserAgent = "Mozilla / 5.0(Windows NT 6.1; WOW64; Trident / 7.0; rv: 11.0) like Gecko";
 
             try
             {

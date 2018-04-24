@@ -32,7 +32,7 @@ namespace TranslationUtil
                 var serializer = new JsonSerializer();
                 var r = serializer.Deserialize<TransResult>(jsonReader);
 
-                return r.Translate.Dit.ToString();
+                return r.Translate.Dit.ToString().Replace("\n","\r\n");
             }
             catch (Exception)
             {

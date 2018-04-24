@@ -8,7 +8,7 @@ namespace TranslationUtil
 {
     public static class HttpUtil
     {
-        public static string Post(string url, string postData, Dictionary<string, string> headerDic = null)
+        public static string Post(string url, string postData, Dictionary<string, string> headerDic = null, string referer = "")
         {
             var ret = string.Empty;
             try
@@ -17,6 +17,7 @@ namespace TranslationUtil
 
                 var request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = @"POST";
+                if (referer.Length > 0) request.Referer = referer;
                 request.ContentType = @"application/x-www-form-urlencoded; charset=UTF-8";
                 request.ContentLength = Encoding.UTF8.GetByteCount(postData);
                 request.UserAgent = @"Mozilla / 5.0(Windows NT 6.1; WOW64; Trident / 7.0; rv: 11.0) like Gecko";

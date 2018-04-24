@@ -68,7 +68,7 @@
             this.textOriginal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textOriginal.Size = new System.Drawing.Size(255, 178);
             this.textOriginal.TabIndex = 29;
-            this.textOriginal.Text = "this is Test";
+            this.textOriginal.TextChanged += new System.EventHandler(this.textOriginal_TextChanged);
             // 
             // label4
             // 
@@ -241,6 +241,7 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.btnTranslation, 2);
             this.btnTranslation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTranslation.Enabled = false;
             this.btnTranslation.Location = new System.Drawing.Point(3, 131);
             this.btnTranslation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTranslation.Name = "btnTranslation";
@@ -272,7 +273,6 @@
             this.cobForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cobForm.FormattingEnabled = true;
             this.cobForm.Items.AddRange(new object[] {
-            "自动检测",
             "日语",
             "英语",
             "中文"});
@@ -408,7 +408,6 @@
             this.chkYoudao.AutoSize = true;
             this.chkYoudao.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chkYoudao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkYoudao.Enabled = false;
             this.chkYoudao.Location = new System.Drawing.Point(296, 384);
             this.chkYoudao.Name = "chkYoudao";
             this.chkYoudao.Size = new System.Drawing.Size(17, 180);
@@ -423,7 +422,6 @@
             this.chkGoogle.AutoSize = true;
             this.chkGoogle.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chkGoogle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkGoogle.Enabled = false;
             this.chkGoogle.Location = new System.Drawing.Point(296, 195);
             this.chkGoogle.Name = "chkGoogle";
             this.chkGoogle.Size = new System.Drawing.Size(17, 180);
