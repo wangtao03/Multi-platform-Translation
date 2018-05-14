@@ -79,6 +79,7 @@ namespace TranslationUtil
             webRequest.Method = "GET";
             webRequest.CookieContainer = cookie;
             webRequest.Timeout = 20000;
+            webRequest.ReadWriteTimeout = 20000;
             webRequest.Accept = "*/*";
             webRequest.Headers.Add("Accept-Encoding: gzip,deflate");
             webRequest.UserAgent = "Mozilla / 5.0(Windows NT 6.1; WOW64; Trident / 7.0; rv: 11.0) like Gecko";
@@ -112,7 +113,8 @@ namespace TranslationUtil
             var webRequest = WebRequest.Create(url) as HttpWebRequest;
             webRequest.Method = "POST";
             webRequest.Referer = refer;
-            webRequest.Timeout = 10000;
+            webRequest.Timeout = 20000;
+            webRequest.ReadWriteTimeout = 20000;
             webRequest.Accept = "application/json, text/javascript, */*; q=0.01";
             webRequest.Headers.Add("Cookie", cookiestr);
             webRequest.Headers.Add("Origin: http://fanyi.qq.com");

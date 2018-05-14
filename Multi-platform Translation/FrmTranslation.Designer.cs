@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTranslation));
             this.textOriginal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,7 +69,8 @@
             this.textOriginal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textOriginal.Size = new System.Drawing.Size(255, 178);
             this.textOriginal.TabIndex = 29;
-            this.textOriginal.TextChanged += new System.EventHandler(this.textOriginal_TextChanged);
+            this.textOriginal.TextChanged += new System.EventHandler(this.TextOriginal_TextChanged);
+            this.textOriginal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextOriginal_KeyPress);
             // 
             // label4
             // 
@@ -81,6 +83,7 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "翻译原文";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.DoubleClick += new System.EventHandler(this.Label4_DoubleClick);
             // 
             // label3
             // 
@@ -109,6 +112,7 @@
             this.textBing.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBing.Size = new System.Drawing.Size(255, 178);
             this.textBing.TabIndex = 31;
+            this.textBing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextSelectAll);
             // 
             // textGoogle
             // 
@@ -125,6 +129,7 @@
             this.textGoogle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textGoogle.Size = new System.Drawing.Size(256, 178);
             this.textGoogle.TabIndex = 32;
+            this.textGoogle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextSelectAll);
             // 
             // textBaidu
             // 
@@ -141,6 +146,7 @@
             this.textBaidu.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBaidu.Size = new System.Drawing.Size(255, 178);
             this.textBaidu.TabIndex = 33;
+            this.textBaidu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextSelectAll);
             // 
             // textYoudao
             // 
@@ -157,6 +163,7 @@
             this.textYoudao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textYoudao.Size = new System.Drawing.Size(256, 178);
             this.textYoudao.TabIndex = 34;
+            this.textYoudao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextSelectAll);
             // 
             // textSogou
             // 
@@ -173,6 +180,7 @@
             this.textSogou.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textSogou.Size = new System.Drawing.Size(255, 181);
             this.textSogou.TabIndex = 35;
+            this.textSogou.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextSelectAll);
             // 
             // textQQ
             // 
@@ -189,6 +197,7 @@
             this.textQQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textQQ.Size = new System.Drawing.Size(256, 181);
             this.textQQ.TabIndex = 36;
+            this.textQQ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextSelectAll);
             // 
             // tableLayoutPanel2
             // 
@@ -438,6 +447,7 @@
             this.ClientSize = new System.Drawing.Size(584, 762);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("YaHei Consolas Hybrid", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmTranslation";
             this.Text = "多平台翻译器";

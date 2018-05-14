@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi-platform Translation", "Multi-platform Translation\Multi-platform Translation.csproj", "{53882C72-317D-4B36-A959-FCFD35741FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationUtil", "TranslationUtil\TranslationUtil.csproj", "{54BE18E4-4FAF-4C5D-93B0-8E696E7E576E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationUtils", "TranslationUtil\TranslationUtils.csproj", "{54BE18E4-4FAF-4C5D-93B0-8E696E7E576E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

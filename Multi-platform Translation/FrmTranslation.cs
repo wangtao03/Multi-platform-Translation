@@ -10,6 +10,8 @@ namespace Multi_platform_Translation
     {
         private readonly Dictionary<string, Dictionary<string, string>> langDic = new Dictionary<string, Dictionary<string, string>>();
 
+        public UndoManager undoManager = new UndoManager(20);
+
         public FrmTranslation()
         {
             InitializeComponent();
@@ -159,9 +161,59 @@ namespace Multi_platform_Translation
             textQQ.Enabled = chkQQ.Checked;
         }
 
-        private void textOriginal_TextChanged(object sender, EventArgs e)
+        private void TextOriginal_TextChanged(object sender, EventArgs e)
         {
             btnTranslation.Enabled = (textOriginal.Text.Length > 0);
+
+            undoManager.Execute(textOriginal.Text);
+        }
+
+        private void Label4_DoubleClick(object sender, EventArgs e)
+        {
+            if (chkBaidu.Enabled) chkBaidu.Checked = !chkBaidu.Checked;
+            if (chkBing.Enabled) chkBing.Checked = !chkBing.Checked;
+            if (chkGoogle.Enabled) chkGoogle.Checked = !chkGoogle.Checked;
+            if (chkQQ.Enabled) chkQQ.Checked = !chkQQ.Checked;
+            if (chkSogou.Enabled) chkSogou.Checked = !chkSogou.Checked;
+            if (chkYoudao.Enabled) chkYoudao.Checked = !chkYoudao.Checked;
+        }
+
+        private void TextSelectAll(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\x1')
+            {
+                ((TextBox)sender).SelectAll();
+                e.Handled = true;
+            }
+        }
+
+        private void TextOriginal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Console.WriteLine((int)e.KeyChar);
+            switch ((int)e.KeyChar)
+            {
+                case 1: //全选 Ctrl+A
+                    ((TextBox)sender).SelectAll();
+                    e.Handled = true;
+                    break;
+
+                case 26: //撤销 Ctrl+Z
+                    undoManager.Undo();
+                    ((TextBox)sender).Text = undoManager.Record;
+                    ((TextBox)sender).SelectionStart = ((TextBox)sender).Text.Length;
+                    e.Handled = true;
+                    break;
+
+                case 25: //重做 Ctrl+Y
+                    undoManager.Redo();
+                    ((TextBox)sender).Text = undoManager.Record;
+                    ((TextBox)sender).SelectionStart = ((TextBox)sender).Text.Length;
+                    e.Handled = true;
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

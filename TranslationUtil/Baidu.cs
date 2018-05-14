@@ -64,7 +64,8 @@ namespace TranslationUtil
             webRequest.Method = "POST";
             webRequest.CookieContainer = cookie;
             webRequest.Referer = refer;
-            webRequest.Timeout = 10000;
+            webRequest.Timeout = 20000;
+            webRequest.ReadWriteTimeout = 20000;
             webRequest.Accept = "*/*";
             webRequest.Headers.Add("Accept-Language: zh-CN;q=0.8,en-US;q=0.6,en;q=0.4");
             webRequest.Headers.Add("Accept-Encoding: gzip,deflate");

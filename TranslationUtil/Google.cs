@@ -57,6 +57,7 @@ namespace TranslationUtil
             webRequest.CookieContainer = cc;
             webRequest.Referer = refer;
             webRequest.Timeout = 20000;
+            webRequest.ReadWriteTimeout = 20000;
             webRequest.Headers.Add("X-Requested-With:XMLHttpRequest");
             webRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
             webRequest.UserAgent = "Mozilla / 5.0(Windows NT 6.1; WOW64; Trident / 7.0; rv: 11.0) like Gecko";
@@ -86,6 +87,7 @@ namespace TranslationUtil
                 throw new NotImplementedException();
             }
         }
+
         private static class TokenGenerator
         {
             private static A[] rl1 = new A[] { new A { a = true, b = false, c = 10 }, new A { a = false, b = true, c = 6 } };

@@ -17,6 +17,7 @@ namespace TranslationUtil
             var salt = (DateTimeOffset.Now.ToUnixTimeMilliseconds() + 9).ToString();
             return string.Format("i={0}&from={1}&to={2}&smartresult=dict&client=fanyideskweb&salt={3}&sign={4}&doctype=json&version=2.1&keyfrom=fanyi.web&action=FY_BY_REALTIME&typoResult=false", new string[] { HttpUtility.UrlEncode(text), fromlang, tolang, salt, MakeSign(text, salt) });
         }
+
         private static string CookieStr { get; set; }
 
         public static string Translation(string text, string fromLanguage, string toLanguage)
@@ -60,7 +61,8 @@ namespace TranslationUtil
             var webRequest = WebRequest.Create(url) as HttpWebRequest;
             webRequest.Method = "POST";
             webRequest.Referer = refer;
-            webRequest.Timeout = 10000;
+            webRequest.Timeout = 20000;
+            webRequest.ReadWriteTimeout = 20000;
             webRequest.Accept = "application/json, text/javascript, */*; q=0.01";
             webRequest.Headers.Add("Cookie", cookiestr);
             webRequest.Headers.Add("X-Requested-With: XMLHttpRequest");
@@ -99,7 +101,6 @@ namespace TranslationUtil
             }
         }
 
-
         private static string YoudaoGET(string url, CookieContainer cookie)
         {
             var html = "";
@@ -107,6 +108,7 @@ namespace TranslationUtil
             webRequest.Method = "GET";
             webRequest.CookieContainer = cookie;
             webRequest.Timeout = 20000;
+            webRequest.ReadWriteTimeout = 20000;
             webRequest.Accept = "*/*";
             webRequest.Headers.Add("Accept-Encoding: gzip,deflate");
             webRequest.UserAgent = "Mozilla / 5.0(Windows NT 6.1; WOW64; Trident / 7.0; rv: 11.0) like Gecko";
